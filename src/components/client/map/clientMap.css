@@ -1,0 +1,6 @@
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container{
+    height: 600px;  
+    width: 100%;
+}

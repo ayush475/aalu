@@ -1,0 +1,24 @@
+.user-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .user-info p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
