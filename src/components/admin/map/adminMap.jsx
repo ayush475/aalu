@@ -276,12 +276,16 @@ const AdminMap = () => {
       {/* <Header title="React Leaflet - Draw polygon, circle, rectangle on map" /> */}
 
       {/* <ExternalInfo page="leafletDraw" /> */}
-      <button onClick={onCreateRouteClick}>Create Route</button>
+      <button
+      className="button"
+       onClick={onCreateRouteClick}>Create Route</button>
 
       <div className="row">
         <div className="col text-center">
           <div>
-            <button onClick={showMyLocation}>Locate Me</button>
+            <button
+             className="button"
+              onClick={showMyLocation}>Locate Me</button>
           </div>
           {/* // form for posting device route */}
           <div>
@@ -342,7 +346,9 @@ const AdminMap = () => {
                   })}
                 />
               </div>
-              <button onClick={onUpdateDeviceRouteClick}>
+              <button
+               className="button"
+              onClick={onUpdateDeviceRouteClick}>
                 Update device Route
               </button>
             </Space>

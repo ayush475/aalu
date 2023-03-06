@@ -256,7 +256,9 @@ const ClientMap = () => {
       {/* <ExternalInfo page="leafletCurrentLocation" /> */}
       <div>
         <div>
-          <button onClick={showMyLocation}>Locate Me</button>
+          <button 
+           className="button"
+          onClick={showMyLocation}>Locate Me</button>
 
           <div>
           <div className="user-info">
@@ -302,10 +304,13 @@ const ClientMap = () => {
                   })}
                 />
               </div>
-              <button onClick={onClickshowBusLocation}>
+              <button 
+              className="button"
+              onClick={onClickshowBusLocation}>
                 show bus location
               </button>
               <button
+               className="button"
                 disabled={!selectedDeviceId || !currentBusLocation}
                 onClick={zoomToBus}
               >

@@ -6,6 +6,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.button{
+  margin: 2px;
+  color: #fff307;
+  background-color: rgb(8, 225, 241);
+  border-radius: 5px;
+  padding: 5px 6px 5px 5px;
+  border-color: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: #282c34;
+  background: linear-gradient(180deg,#226f76, #2b7279);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2), 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
