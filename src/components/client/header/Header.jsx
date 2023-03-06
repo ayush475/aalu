@@ -3,7 +3,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './header.css';
 import {BrowserRouter, NavLink } from 'react-router-dom';
-import { FaCode, FaBars, FaTimes } from "react-icons/fa";
+import { FaCode, FaBars, FaTimes, FaBus } from "react-icons/fa";
 
 const Header = () => {
 	// const [open, setOpen] = useState(false);
@@ -27,8 +27,8 @@ const Header = () => {
   <nav className="navbar" onClick={(e) => e.stopPropagation()}>
     <div className="nav-container">
       <NavLink exact to="/" className="nav-logo">
-        bus-sewa
-        <FaCode />
+        Bus-sewa
+        <FaBus size={20} />
       </NavLink>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">

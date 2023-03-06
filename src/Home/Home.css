@@ -1,0 +1,77 @@
+.head{
+    color: brown;
+}
+.listt{
+    list-style-type: none; 
+    justify-content: left;
+}
+.submit{
+    color: crimson;
+}
+.santa{
+    color: green;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+  
+  .listt,
+  .submit,
+  .special {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .head,
+  .submit,
+  .special h1 {
+    margin-top: 0;
+  }
+  
+  .listt li {
+    margin: 0;
+    padding: 0.5rem;
+  }
+  
+  .special .santa {
+    font-weight: bold;
+  }
+#madhu{
+    color:green;
+}  
+.github-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.github-link p {
+  float: left;
+  margin-right: 10px;
+}
+
+.github-link a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.github-link i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.github-link:hover {
+  background-color: #444;
+}
+
+
+
+  

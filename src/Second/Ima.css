@@ -1,0 +1,27 @@
+.image-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  
+  .image-description img {
+    width: 350px;
+    float: left;
+  }
+  
+  .image-description .description {
+    margin-left: 160px;
+  }
+  
+  .image-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .image-description p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
