@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import useInterval from 'use-interval'
+import useInterval from "use-interval";
 import {
   Map,
   TileLayer,
@@ -28,7 +28,7 @@ import { busLocationIcon } from "./markers";
 
 const markerIcon = new L.Icon({
   iconUrl: require("../../../assets/myLocation.png"),
-  iconSize: [10, 10],
+  iconSize: [30, 30],
   iconAnchor: [17, 46], //[left/right, top/bottom]
   popupAnchor: [0, -46], //[left/right, top/bottom]
 });
@@ -44,13 +44,14 @@ const ClientMap = () => {
   const [currentBusLocation, setCurrentBusLocation] = useState(null);
   const [allDevices, setAllDevices] = useState();
   const [selectedDeviceId, setSelectedDeviceId] = useState();
+  const [selectedDeviceVelocity,setSelectedDeviceVelocity]=useState(null);
+
 
   const ZOOM_LEVEL = 18;
   const mapRef = useRef();
   const deviceRouteLocationRef = useRef();
-  const busMarkerRef=useRef();
-  // for interval ref 
- 
+  const busMarkerRef = useRef();
+  // for interval ref
 
   const location = useGeoLocation();
 
@@ -69,13 +70,11 @@ const ClientMap = () => {
 
   const zoomToBus = () => {
     // console.log(busMarkerRef.current.getLatLng());
-    let coordinates=busMarkerRef.current.getLatLng();
+    let coordinates = busMarkerRef.current.getLatLng();
     if (busMarkerRef.current) {
-      mapRef.current.flyTo(
-        [coordinates.lat,coordinates.lng],
-        ZOOM_LEVEL,
-        { animate: true }
-      );
+      mapRef.current.flyTo([coordinates.lat, coordinates.lng], ZOOM_LEVEL, {
+        animate: true,
+      });
     } else {
       alert(location.error.message);
     }
@@ -83,7 +82,7 @@ const ClientMap = () => {
 
   const onClickshowBusLocation = () => {
     getBusTravelInfoByDeviceId(selectedDeviceId).then((data) => {
-      console.log(data,"ddddd");
+      console.log(data, "ddddd");
       if (data.sucess) {
         // setDeviceRouteLocations(data.busInfo[0]);
         console.log(data?.busInfo);
@@ -93,9 +92,10 @@ const ClientMap = () => {
         let currentLocationStamp =
           currentNodeOfBus[currentNodeOfBus.length - 1];
         let currentLatLng = parseLatAndLong(currentLocationStamp[0]);
-        console.log(currentLatLng,"dddddddddddddddddddddddddddddd");
+        console.log(currentLatLng, "dddddddddddddddddddddddddddddd");
 
         setCurrentBusLocation(currentLatLng);
+        setSelectedDeviceVelocity(data.busInfo[0].velocity);
         // const filterRoute = data.busInfo[0].filter((route) => {
         //   if (route.id == selectedRouteId) {
         //     // console.log(route.nodes.locations);
@@ -115,12 +115,12 @@ const ClientMap = () => {
             },
           });
         }
-console.log(location);
+        console.log(location);
         let drawLocations = nodes.locations.map((location) => {
           console.log(location);
-          let data=parseLatAndLong(location);
-console.log(data);
-          return [data.lat, data.lng];
+          // let data = parseLatAndLong(location);
+          // console.log(data);
+          return [location.lat, location.lng];
         });
 
         console.log(drawLocations);
@@ -139,9 +139,7 @@ console.log(data);
     });
   }, []);
 
-  useEffect(()=>{
-
-  },[])
+  useEffect(() => {}, []);
 
   useEffect(() => {
     console.log(deviceRouteLocations);
@@ -152,67 +150,66 @@ console.log(data);
     }
   }, [deviceRouteLocations]);
 
-// INTERVAL LOCATION FETCH
-// useEffect(() => {
-//   console.log(process.env.REACT_APP_GPS_FETCH_INTERVAL);
-//   const interval = setInterval(() => {
-//     console.log('Logs every at the given interval minute');
-    
-    // if(selectedDeviceId && deviceRouteLocations){
-    //   console.log("uner");
-    //   getBusTravelInfoByDeviceId(selectedDeviceId).then((data) => {
-    //     if (data.sucess) {
-    //       // setDeviceRouteLocations(data.busInfo[0]);
-    //       console.log(data.busInfo);
-    //       let nodes = data.busInfo[0].routeNodes;
-    //       let currentNodeOfBus =
-    //         data.busInfo[0].busTravelRecentNodes.locationsWithTimeStamp;
-    //       let currentLocationStamp =
-    //         currentNodeOfBus[currentNodeOfBus.length - 1];
-    //       let currentLatLng = parseLatAndLong(currentLocationStamp[0]);
-    //       console.log(currentLatLng,"dddddddddddddddddddddddddddddd");
-  
-    //       setCurrentBusLocation(currentLatLng);
-    //       // const filterRoute = data.busInfo[0].filter((route) => {
-    //       //   if (route.id == selectedRouteId) {
-    //       //     // console.log(route.nodes.locations);
-    //       //     return route;
-    //       //   }
-    //       //   // console.log(route);
-    //       // });
-    //       // console.log(filterRoute);
-    //       if (nodes.locations.length == 0) {
-    //         notification.error({
-    //           message: `Warning`,
-    //           description: `Route of this device has not been set up`,
-    //           style: {
-    //             width: 600,
-    //             marginLeft: 335 - 600,
-    //             zIndex: 1000,
-    //           },
-    //         });
-    //       }
-  
-    //       let drawLocations = nodes.locations.map((location) => {
-    //         console.log(location);
-    //         return [location.lat, location.lng];
-    //       });
-  
-    //       console.log(drawLocations);
-    //       setDeviceRouteLocations(drawLocations);
-    //     }
-    //   });
-    // }
-   
+  // INTERVAL LOCATION FETCH
+  // useEffect(() => {
+  //   console.log(process.env.REACT_APP_GPS_FETCH_INTERVAL);
+  //   const interval = setInterval(() => {
+  //     console.log('Logs every at the given interval minute');
 
-//   }, process.env.REACT_APP_GPS_FETCH_INTERVAL);
+  // if(selectedDeviceId && deviceRouteLocations){
+  //   console.log("uner");
+  //   getBusTravelInfoByDeviceId(selectedDeviceId).then((data) => {
+  //     if (data.sucess) {
+  //       // setDeviceRouteLocations(data.busInfo[0]);
+  //       console.log(data.busInfo);
+  //       let nodes = data.busInfo[0].routeNodes;
+  //       let currentNodeOfBus =
+  //         data.busInfo[0].busTravelRecentNodes.locationsWithTimeStamp;
+  //       let currentLocationStamp =
+  //         currentNodeOfBus[currentNodeOfBus.length - 1];
+  //       let currentLatLng = parseLatAndLong(currentLocationStamp[0]);
+  //       console.log(currentLatLng,"dddddddddddddddddddddddddddddd");
 
-//   return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-// }, [])
+  //       setCurrentBusLocation(currentLatLng);
+  //       // const filterRoute = data.busInfo[0].filter((route) => {
+  //       //   if (route.id == selectedRouteId) {
+  //       //     // console.log(route.nodes.locations);
+  //       //     return route;
+  //       //   }
+  //       //   // console.log(route);
+  //       // });
+  //       // console.log(filterRoute);
+  //       if (nodes.locations.length == 0) {
+  //         notification.error({
+  //           message: `Warning`,
+  //           description: `Route of this device has not been set up`,
+  //           style: {
+  //             width: 600,
+  //             marginLeft: 335 - 600,
+  //             zIndex: 1000,
+  //           },
+  //         });
+  //       }
 
-useInterval(()=>{  
-console.log("ddfdf");
- if(selectedDeviceId && deviceRouteLocations.length>0){
+  //       let drawLocations = nodes.locations.map((location) => {
+  //         console.log(location);
+  //         return [location.lat, location.lng];
+  //       });
+
+  //       console.log(drawLocations);
+  //       setDeviceRouteLocations(drawLocations);
+  //     }
+  //   });
+  // }
+
+  //   }, process.env.REACT_APP_GPS_FETCH_INTERVAL);
+
+  //   return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+  // }, [])
+
+  useInterval(() => {
+    console.log("ddfdf");
+    if (selectedDeviceId && deviceRouteLocations.length > 0) {
       console.log("uner");
       getBusTravelInfoByDeviceId(selectedDeviceId).then((data) => {
         if (data.sucess) {
@@ -224,10 +221,10 @@ console.log("ddfdf");
           let currentLocationStamp =
             currentNodeOfBus[currentNodeOfBus.length - 1];
           let currentLatLng = parseLatAndLong(currentLocationStamp[0]);
-          console.log(currentLatLng,"dddddddddddddddddddddddddddddd");
-  
+          console.log(currentLatLng, "dddddddddddddddddddddddddddddd");
+
           setCurrentBusLocation(currentLatLng);
-          
+
           // if (nodes.locations.length == 0) {
           //   notification.error({
           //     message: `Warning`,
@@ -239,18 +236,18 @@ console.log("ddfdf");
           //     },
           //   });
           // }
-  
+
           // let drawLocations = nodes.locations.map((location) => {
           //   console.log(location);
           //   return [location.lat, location.lng];
           // });
-  
+
           // console.log(drawLocations);
           // setDeviceRouteLocations(drawLocations);
         }
       });
     }
-},[process.env.REACT_APP_GPS_FETCH_INTERVAL])  
+  }, [process.env.REACT_APP_GPS_FETCH_INTERVAL]);
 
   return (
     <>
@@ -262,6 +259,22 @@ console.log("ddfdf");
           <button onClick={showMyLocation}>Locate Me</button>
 
           <div>
+          <div className="user-info">
+          <p className="label">Select bus Id to see details</p>
+           {
+        selectedDeviceVelocity && 
+        <p><span className="label">Velocity:</span>{selectedDeviceVelocity}  m/s</p>
+
+           } 
+           {
+            currentBusLocation && 
+        <p><span className="label">CurrentLocation:</span>{currentBusLocation.lat},{currentBusLocation.lng}</p>
+
+           }
+        {/* <p><span className="label">Tagid:</span> {tagId}</p>
+        <p><span className="label">Remaining-balance:</span> {remainingBalance}</p> */}
+        {/* <p><span className='label'>Bus-Routes</span>{BusRoutes}</p> */}
+      </div>
             <Space>
               {" "}
               <div>
@@ -293,8 +306,9 @@ console.log("ddfdf");
                 show bus location
               </button>
               <button
-              disabled={!selectedDeviceId || !currentBusLocation}
-              onClick={zoomToBus}>
+                disabled={!selectedDeviceId || !currentBusLocation}
+                onClick={zoomToBus}
+              >
                 Locate and zoom to bus
               </button>
             </Space>
@@ -318,7 +332,8 @@ console.log("ddfdf");
 
               {location.loaded && !location.error && (
                 <Marker
-                  icon={markerIcon}
+                  // icon={default}
+                  
                   position={[
                     location.coordinates.lat,
                     location.coordinates.lng,
@@ -332,17 +347,14 @@ console.log("ddfdf");
                 ref={deviceRouteLocationRef}
               />
 
-              {/* this is for livebuslocation marker; */}{
-                currentBusLocation && <Marker
-                icon={busLocationIcon}
-                ref={busMarkerRef}
-                position={[
-                  currentBusLocation.lat,
-                  currentBusLocation.lng,
-                ]}
-              ></Marker>
-              }
-              
+              {/* this is for livebuslocation marker; */}
+              {currentBusLocation && (
+                <Marker
+                  icon={busLocationIcon}
+                  ref={busMarkerRef}
+                  position={[currentBusLocation.lat, currentBusLocation.lng]}
+                ></Marker>
+              )}
 
               <TileLayer
                 url={osm.maptiler.url}

@@ -377,7 +377,7 @@ const AdminMap = () => {
               {/* for myGeoLocationIcon portion */}
               {location.loaded && !location.error && (
                 <Marker
-                  icon={myGeoLocationIcon}
+                  // icon={myGeoLocationIcon}
                   position={[
                     location.coordinates.lat,
                     location.coordinates.lng,

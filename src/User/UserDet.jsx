@@ -12,7 +12,7 @@ const UserDet = ({ uname, email, tagId,remainingBalance,BusRoutes }) => {
         <p><span className="label">Email:</span> {email}</p>
         <p><span className="label">Tagid:</span> {tagId}</p>
         <p><span className="label">Remaining-balance:</span> {remainingBalance}</p>
-        <p><span className='label'>Bus-Routes</span>{BusRoutes}</p>
+        {/* <p><span className='label'>Bus-Routes</span>{BusRoutes}</p> */}
       </div>
     </div>
     </>
