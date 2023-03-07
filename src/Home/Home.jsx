@@ -46,10 +46,11 @@ Kathmandu, Nepal</p>
     <span className='test'>Internal Examiner</span>
     <p className='santa'> Er.Saroj Shakya</p>
     <span>And</span><br/>
-    <span className='test'> for providing us  with hardware components and help</span>
     <Link to='https://www.facebook.com/techkeynp/'>
     <p id='madhu'> TechKey Electronics --Sanepa</p>
     </Link>
+    <span className='test'> for providing us  with hardware components and help</span>
+    
     
     <p></p>
 </div>
