@@ -11,6 +11,9 @@
 .special{
   color: crimson;
 }
+.special.li{
+  color: black;
+}
 .santa{
     color: green;
 }
