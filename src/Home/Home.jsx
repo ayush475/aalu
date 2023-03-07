@@ -40,10 +40,10 @@ Kathmandu, Nepal</p>
     <span>And </span><br/>
     <span>External Examiner</span>
     <p className='santa'> Dr.Ganesh Gautam</p>
-    <span>And </span>
+    <span>And </span><br/>
     <span>Internal Examiner</span>
     <p className='santa'> Er.Saroj Shakya</p>
-    <span>And</span>
+    <span>And</span><br/>
     <span> for providing us  with hardware components and help</span>
     <Link to='https://www.facebook.com/techkeynp/'>
     <p id='madhu'> TechKey Electronics --Sanepa</p>
