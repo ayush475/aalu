@@ -59,11 +59,11 @@ Kathmandu, Nepal</p>
    <p className='sc'>you can get  this project source code here</p> 
   <a target={'_blank'}  href="https://github.com/ayush475">
     <i class="fab fa-github"></i>
-    Github link 1
+    ayush475 github
   </a>
   <a target={'_blank'} href="https://github.com/Shresthadev403">
     <i class="fas fa-external-link-alt"></i>
-    github link 2
+    Shresthadev403 github
   </a>
 </div>
 
