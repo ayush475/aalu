@@ -40,7 +40,7 @@ Kathmandu, Nepal</p>
     <span>And</span>
     <span>External Examiner</span>
     <p className='santa'> Dr.Ganesh Gautam</p>
-    <span>And</span>
+    <span>And </span>
     <span>Internal Examiner</span>
     <p className='santa'> Er.Saroj Shakya</p>
     <span>And</span>
