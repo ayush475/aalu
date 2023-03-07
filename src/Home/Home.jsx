@@ -37,6 +37,9 @@ Kathmandu, Nepal</p>
     <h1> Special Thanks to</h1>
     <p className='santa'> Er.Santa Maharjan</p>
     <span>And</span>
+    <p className='santa'> Dr.Ganesh Gautam</p>
+    <span>And</span>
+    <span> for providing us  with hardware components and help</span>
     <Link to='https://www.facebook.com/techkeynp/'>
     <p id='madhu'> TechKey Electronics --Sanepa</p>
     </Link>
