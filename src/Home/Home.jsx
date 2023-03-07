@@ -37,7 +37,7 @@ Kathmandu, Nepal</p>
     <h1> Special Thanks to</h1>
     <span>Our supervisor</span>
     <p className='santa'> Er.Santa Maharjan</p>
-    <span>And</span>
+    <span>And </span><br/>
     <span>External Examiner</span>
     <p className='santa'> Dr.Ganesh Gautam</p>
     <span>And </span>
