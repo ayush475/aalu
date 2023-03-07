@@ -34,8 +34,8 @@ Kathmandu, Nepal</p>
 </Link>
 </div>
 <div className='special'>
-    <h1 className='test'> Special Thanks to</h1>
-    <span>Our supervisor</span>
+    <h1 className='testing'> Special Thanks to</h1>
+    <span className='test'>Our supervisor</span>
     <p className='santa'> Er.Santa Maharjan</p>
     {/* <span>And </span> */}
     <br/>
