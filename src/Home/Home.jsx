@@ -35,9 +35,14 @@ Kathmandu, Nepal</p>
 </div>
 <div className='special'>
     <h1> Special Thanks to</h1>
+    <span>Our supervisor</span>
     <p className='santa'> Er.Santa Maharjan</p>
     <span>And</span>
+    <span>External Examiner</span>
     <p className='santa'> Dr.Ganesh Gautam</p>
+    <span>And</span>
+    <span>Internal Examiner</span>
+    <p className='santa'> Er.Saroj Shakya</p>
     <span>And</span>
     <span> for providing us  with hardware components and help</span>
     <Link to='https://www.facebook.com/techkeynp/'>
