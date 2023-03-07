@@ -12,14 +12,14 @@ const Home = () => {
         
         
         
-        <h1>A Minor Project Mid-Term Report<h1/>
+        <h1>A Minor Project Final Report<h1/>
         On
 IOT Smart Bus System with NFC/RFID GPS Transit</h1>
 <Bus/>
 <div className='grid'>
 <div className='listt'>
     <h1 className='head'>submitted by</h1>
-    <li>Ayush acharya<span>THA076BEI007</span></li>
+    <li>Ayush acharya <span>THA076BEI007</span></li>
     <li>Anupam himal bhattrai <span>THA076BEI008</span></li>
     <li>Jagadish  Shrestha <span>THA076BEI010</span></li>
     <li>Mahesh banjade <span>THA076BEI014</span></li>
