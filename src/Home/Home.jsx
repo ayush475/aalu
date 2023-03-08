@@ -19,10 +19,10 @@ IOT Smart Bus System with NFC/RFID GPS Transit</h1>
 <div className='grid'>
 <div className='listt'>
     <h1 className='head'>Submitted by</h1>
-    <li>Ayush acharya <span>THA076BEI007</span></li>
-    <li>Anupam himal bhattrai <span>THA076BEI008</span></li>
+    <li>Ayush Acharya <span>THA076BEI007</span></li>
+    <li>Anupam Himal Bhattrai <span>THA076BEI008</span></li>
     <li>Jagadish  Shrestha <span>THA076BEI010</span></li>
-    <li>Mahesh banjade <span>THA076BEI014</span></li>
+    <li>Mahesh Banjade <span>THA076BEI014</span></li>
     {/* <li>Jagadish  Shrestha <span>THA076BEI010</span></li> */}
 </div>
 <div >
