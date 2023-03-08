@@ -244,7 +244,7 @@
   
   @keyframes cloudy{
       0% { left: -600px;}
-      50%{left:0%}
+      50%{left:-300%}
       100% {left: 1320px;}
    }
   
